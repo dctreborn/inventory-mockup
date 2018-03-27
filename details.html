@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Details View</title>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>	
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="index.html">Navbar</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		    <div class="navbar-nav">
+		      <a class="nav-item nav-link" href="user.html">User</a>
+		      <a class="nav-item nav-link" href="admin.html">Admin</a>
+		      <a class="nav-item nav-link" href="history.html">Histories</a>
+		    </div>
+		  </div>
+		  <form class="form-inline">
+		    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		  </form>
+		</nav>
+		<br>
+		<div class="alert alert-dark" role="alert">
+		  Vendor Name - today's date
+		</div>
+		<br>
+		<!-- config #1 -->
+		<div class="card">
+		  <div class="card-header">
+		    Item Name - Config 1
+		  </div>
+		  <div class="row" id="data">
+		  	<div class="col-sm-3"><span class="badge badge-dark">Assay</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">BVPCR</div>
+		  	<div class="col-sm-3"><span class="badge badge-dark">On Hand</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">9999</div>
+		  </div>
+
+		  <div class="row" id="data">
+		  	<div class="col-sm-3"><span class="badge badge-dark">Catalog #</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">0123456789</div>
+		  	<div class="col-sm-3"><span class="badge badge-dark">Safety Stock</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">100</div>
+		  </div>
+
+		  <div class="row" id="data">
+		  	<div class="col-sm-3"><span class="badge badge-dark">Unit/Order</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">5 Cases</div>
+		  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Point</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">50</div>
+		  </div>
+
+		  <div class="row" id="data">
+		  	<div class="col-sm-3"><span class="badge badge-dark">Sample Volume Dependent</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">Yes</div>
+		  	<div class="col-sm-3"><span class="badge badge-dark">Buffer</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">1.1</div>
+		  </div>
+
+		  <div class="row" id="data">
+		  	<div class="col-sm-3"><span class="badge badge-dark">Weekly Average Use</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">45</div>
+		  	<div class="col-sm-3"><span class="badge badge-dark">Lead Time</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">7 days</div>
+		  </div>
+
+		  <div class="row" id="data">
+		  	<div class="col-sm-3"><span class="badge badge-dark">Runs per Week</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">20</div>
+		  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Quantity</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">1000</div>
+		  </div>
+
+		  <div class="row" id="data">
+		  	<div class="col-sm-3"><span class="badge badge-dark">Controls per Run</span></div>
+		  	<div class="col-sm-3 text-right dashed-border">20</div>
+		  	<div class="col-sm-3">
+		  		
+		  	</div>
+		  	<div class="col-sm-3 text-right">
+		  		<a href="history.html">
+			  		<button class="btn btn-secondary btn-sm">
+			  			Detailed History
+			  		</button>
+		  		</a>
+		  	</div>
+		  </div>
+		</div>
+		<br>
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		#data {
+			padding: 10px;
+		}
+		.badge {
+			width: 100%;
+		}
+		.dashed-border:after {
+			content: "";
+			display: block;
+			width: 105%;
+			float: right;
+			border-bottom: 1px dashed gray;
+		}
+	</style>
+</body>
+</html>

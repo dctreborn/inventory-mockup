@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>User View</title>
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>	
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="index.html">Navbar</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		    <div class="navbar-nav">
+		      <a class="nav-item nav-link" href="user.html">User</a>
+		      <a class="nav-item nav-link" href="admin.html">Admin</a>
+		    </div>
+		  </div>
+		  <form class="form-inline">
+		    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		  </form>
+		</nav>
+		<br>
+		<div class="alert alert-dark" role="alert">
+		  Assay Name - today's date
+		</div>
+		<br>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Item</th>
+					<th scope="col">Vendor</th>
+					<th scope="col">Cat#</th>
+					<th scope="col">Unit/Order</th>
+					<th scope="col">Previous Stock</th>
+					<th scope="col">Current Stock</th>
+					<th scope="col">To Order</th>
+					<th scope="col">Comments</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Reagent Name</td>
+					<td>Vendor Short Name</td>
+					<td>0123456789</td>
+					<td>99</td>
+					<td>999</td>
+					<td>
+						<div class="input-group input-group-sm mb-3">
+							<div class="input-group-prepend">
+							    <span class="input-group-text" id="inputGroup-sizing-sm">Recent entry</span>
+							  </div>
+						  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="number goes here">
+						</div>
+					</td>
+					<td>65535</td>
+					<td>Comments go here</td>
+				</tr>
+				<tr>
+					<td>Reagent Name</td>
+					<td>Vendor Short Name</td>
+					<td>0123456789</td>
+					<td>99</td>
+					<td>999</td>
+					<td>
+						<div class="input-group input-group-sm mb-3">
+							<div class="input-group-prepend">
+							    <span class="input-group-text" id="inputGroup-sizing-sm">Recent entry</span>
+							  </div>
+						  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="number goes here">
+						</div>
+					</td>
+					<td>65535</td>
+					<td>Comments go here</td>
+				</tr>
+				<tr>
+					<td>Reagent Name</td>
+					<td>Vendor Short Name</td>
+					<td>0123456789</td>
+					<td>99</td>
+					<td>999</td>
+					<td>
+						<div class="input-group input-group-sm mb-3">
+							<div class="input-group-prepend">
+							    <span class="input-group-text" id="inputGroup-sizing-sm">Recent entry</span>
+							  </div>
+						  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="number goes here">
+						</div>
+					</td>
+					<td>65535</td>
+					<td>Comments go here</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

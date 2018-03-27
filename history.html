@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Histories</title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+	<script type="text/javascript" src="dummy.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="index.html">Navbar</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		    <div class="navbar-nav">
+		      <a class="nav-item nav-link" href="user.html">User</a>
+		      <a class="nav-item nav-link" href="admin.html">Admin</a>		      
+		    </div>
+		  </div>
+		</nav>
+		<br>
+		<p>Sample Data Trends</p>
+		<!-- make selector for time span -->
+		<!-- dynamic average based on time span -->
+		
+		<div id="graph-container">
+			<canvas id="myChart"></canvas>
+		</div>
+		
+
+		<form>
+			<select name="" id="time">
+				<option value="7">1 week</option>
+				<option value="30">1 month</option>
+				<option value="180">6 months</option>
+				<option value="365">1 year</option>
+			</select>
+		</form>
+
+	</div>
+
+	<style type="text/css">
+		.myChart {
+			height: 400px;
+			width: 400px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', x => {
+				var arr = [];
+				var days = document.getElementById("time").value;
+				var avg = 0;
+				console.log("loaded");
+				graph(arr, avg);
+
+				document.querySelector("select[id='time']").onchange=changeEventHandler;
+
+		}, false)
+
+		function changeEventHandler(event)	{
+			var days = parseInt(this.value);
+			var arr = period(days);
+			var avg = average(arr, days);
+			graph(arr, avg, days);
+			// console.log(days);
+			initialize();	
+		}		
+
+	</script>
+
+</body>
+</html>
