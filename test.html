@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="formula">	
+			<input placeholder="0" value="0" class="num1">
+		+
+		<input placeholder="1" value="1" class="num2">
+		=
+		<div class="result"></div>
+	</div>
+	
+
+	<script>	
+			$(".formula").change(x=>{
+				let num1 = $(".num1").val()
+				let num2 = $(".num2").val()
+				let result = parseInt(num1) + parseInt(num2)
+
+				$(".result").html(result)
+			})
+	</script>
+</body>
+</html>
