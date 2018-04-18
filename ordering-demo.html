@@ -75,10 +75,10 @@
 									<td>20</td>
 									<td>
 										<div class="input-group input-group-sm mb-3">
-											<input type="number" class="form-control current-stock1" placeholder="number goes here">
+											<input type="number" min="0" class="form-control" id="current-stock1" placeholder="number goes here">
 										</div>
 									</td>
-									<td class="result1">65535</td>									
+									<td id="result1">65535</td>									
 								</tr>
 
 								<tr class="item2">
@@ -89,10 +89,10 @@
 									<td>0.5</td>
 									<td>
 										<div class="input-group input-group-sm mb-3">
-										  <input type="number" class="form-control current-stock2" placeholder="number goes here">
+										  <input type="number" min="0" class="form-control"  id="current-stock2" placeholder="number goes here">
 										</div>
 									</td>
-									<td class="result2">65535</td>									
+									<td id="result2">65535</td>									
 								</tr>
 								<tr class="item3">
 									<td>10uL Tips</td>
@@ -102,10 +102,10 @@
 									<td>10</td>
 									<td>
 										<div class="input-group input-group-sm mb-3">
-										  <input type="number" class="form-control current-stock3" placeholder="number goes here">
+										  <input type="number" min="0" class="form-control"  id="current-stock3" placeholder="number goes here">
 										</div>
 									</td>
-									<td class="result3">65535</td>									
+									<td id="result3">65535</td>									
 								</tr>
 							</tbody>
 						</table>
@@ -119,38 +119,36 @@
 				<div class="card">
 				  <div class="card-header">
 				    TAQMAN Environmental MMX
+				    <span class="right"><button type="button" class="btn btn-dark btn-sm"  id="reset1">Reset Calculations</button></span>
 				  </div>
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Assay</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">BVPCR</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">On Hand</span></div>
-				  	<div class="col-sm-3 dashed-border">
-		  				<input type="number" class="form-control reagent-data" id="on-hand1" value="10">
-		  				<i class="far fa-edit left"></i>
-					  </div>
+				  	<div class="col-sm-3 dashed-border text-right" id="on-hand1">10</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Catalog #</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">0123456789</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Safety Stock</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="safety-stock1" value="0.932563438">
+							<input type="number" min="0" class="form-control reagent-data" id="safety-stock1" value="0.932563438">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Unit/Order</span></div>
-				  	<div class="col-sm-3 text-right dashed-border">4</div>
-				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Point</span></div>
+				  	<div class="col-sm-3 text-right dashed-border"  id="unit-order1">4</div>				  	
+				  	<div class="col-sm-3"><span class="badge badge-dark">Weeks of Safety Stock</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="reorder-point1" value="12">
+				  		<input type="number" min="0" class="form-control reagent-data" id="safety-weeks1" value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Sample Volume Dependent</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
 							<select id="dependent1">
@@ -159,50 +157,59 @@
 							</select>
 							<i class="far fa-edit left"></i>
 				  	</div>
-				  	<div class="col-sm-3"><span class="badge badge-dark">Buffer</span></div>
+				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Point</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="buffer1" value="1.2">
+							<input type="number" min="0" class="form-control reagent-data" id="reorder-point1" value="12">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
-				  	<div class="col-sm-3"><span class="badge badge-dark">Weekly Average Use</span></div>
+				  <div class="row">
+				  	<div class="col-sm-3"><span class="badge badge-dark">Weekly Sample Volume</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="avg-use1" value="3">
+							<input type="number" min="0" class="form-control reagent-data" id="weekly-volume1" value="800">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Lead Time (days)</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="lead-time1" value="7">
+							<input type="number" min="0" class="form-control reagent-data" id="lead-time1" value="7">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Runs per Week</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="weekly-runs1" value="20">
+							<input type="number" min="0" class="form-control reagent-data" id="weekly-runs1" value="20">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Quantity</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="reorder-quant1" value="43.5">
+							<input type="number" min="0" class="form-control reagent-data" id="reorder-quant1" value="43.5">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Controls per Run</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="run-controls1" value="18">
+							<input type="number" min="0" class="form-control reagent-data" id="run-controls1" value="18">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Weeks to Reorder</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-				  		<input type="number" class="form-control reagent-data" id="reorder-weeks1" value="24">
+				  		<input type="number" min="0" class="form-control reagent-data" id="reorder-weeks1" value="24">
 							<i class="far fa-edit left"></i>
 				  	</div>
+				  </div>
+				  <div class="row">
+				  	<div class="col-sm-3"><span class="badge badge-dark">Sample Reactions per Order</span></div>
+				  	<div class="col-sm-3 text-right dashed-border">
+							<input type="number" min="0" class="form-control reagent-data" id="reactions-per-item1" value="640">
+							<i class="far fa-edit left"></i>
+				  	</div>
+				  	<div class="col-sm-3"></div>
+				  	<div class="col-sm-3"></div>
 				  </div>
 				</div>
 			</div>
@@ -214,38 +221,36 @@
 				<div class="card">
 				  <div class="card-header">
 				    TAQMAN ProAMP MMX, 50 mL
+				    <span class="right"><button type="button" class="btn btn-dark btn-sm" id="reset2">Reset Calculations</button></span>
 				  </div>
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Assay</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">HFE</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">On Hand</span></div>
-				  	<div class="col-sm-3 dashed-border">
-		  				<input type="number" class="form-control reagent-data" id="on-hand2" value="1">
-		  				<i class="far fa-edit left"></i>
-					  </div>
+				  	<div class="col-sm-3 dashed-border text-right"  id="on-hand2">1</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Catalog #</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">0123456789</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Safety Stock</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="safety-stock2" value="0.314328582">
+							<input type="number" min="0" class="form-control reagent-data" id="safety-stock2" value="0.314328582">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Unit/Order</span></div>
-				  	<div class="col-sm-3 text-right dashed-border">1</div>
-				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Point</span></div>
+				  	<div class="col-sm-3 text-right dashed-border" id="unit-order2">1</div>
+				  	<div class="col-sm-3"><span class="badge badge-dark">Weeks of Safety Stock</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="reorder-point2" value="0.58">
+				  		<input type="number" min="0" class="form-control reagent-data" id="safety-weeks2" value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Sample Volume Dependent</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
 							<select id="dependent2">
@@ -254,51 +259,62 @@
 							</select>
 							<i class="far fa-edit left"></i>
 				  	</div>
-				  	<div class="col-sm-3"><span class="badge badge-dark">Buffer</span></div>
+				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Point</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="buffer2" value="1.1">
+							<input type="number" min="0" class="form-control reagent-data" id="reorder-point2" value="0.58">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
-				  	<div class="col-sm-3"><span class="badge badge-dark">Weekly Average Use</span></div>
+				  <div class="row">
+				  	<div class="col-sm-3"><span class="badge badge-dark">Weekly Sample Volume</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="avg-use2" value="0.25">
+							<input type="number" min="0" class="form-control reagent-data" id="weekly-volume2" value="96">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Lead Time (days)</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="lead-time2" value="5">
+							<input type="number" min="0" class="form-control reagent-data" id="lead-time2" value="5">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Runs per Week</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="weekly-runs2" value="3">
+							<input type="number" min="0" class="form-control reagent-data" id="weekly-runs2" value="3">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Quantity</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="reorder-quant2" value="2.1">
+							<input type="number" min="0" class="form-control reagent-data" id="reorder-quant2" value="2.1">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Controls per Run</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="run-controls2" value="12">
+							<input type="number" min="0" class="form-control reagent-data" id="run-controls2" value="12">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Weeks to Reorder</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-				  		<input type="number" class="form-control reagent-data" id="reorder-weeks2" value="8">
+				  		<input type="number" min="0" class="form-control reagent-data" id="reorder-weeks2" value="8">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
+
+				  <div class="row">
+				  	<div class="col-sm-3"><span class="badge badge-dark">Sample Reactions per Order</span></div>
+				  	<div class="col-sm-3 text-right dashed-border">
+							<input type="number" min="0" class="form-control reagent-data" id="reactions-per-item2" value="1666">
+							<i class="far fa-edit left"></i>
+				  	</div>
+				  	<div class="col-sm-3"></div>
+				  	<div class="col-sm-3"></div>
+				  </div>
+
 				</div>
 			</div>	
 		</div>
@@ -309,38 +325,36 @@
 				<div class="card">
 				  <div class="card-header">
 				    10 uL Tips
+				    <span class="right"><button type="button" class="btn btn-dark btn-sm" id="reset3">Reset Calculations</button></span>
 				  </div>
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Assay</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">General</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">On Hand</span></div>
-				  	<div class="col-sm-3 dashed-border">
-		  				<input type="number" class="form-control reagent-data" id="on-hand3" value="2">
-		  				<i class="far fa-edit left"></i>
-					  </div>
+				  	<div class="col-sm-3 dashed-border text-right"  id="on-hand3">2</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Catalog #</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">0123456789</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Safety Stock</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="safety-stock3" value="0">
+							<input type="number" min="0" class="form-control reagent-data" id="safety-stock3" disabled value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Unit/Order</span></div>
-				  	<div class="col-sm-3 text-right dashed-border">10</div>
-				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Point</span></div>
+				  	<div class="col-sm-3 text-right dashed-border" id="unit-order3">10</div>
+				  	<div class="col-sm-3"><span class="badge badge-dark">Weeks of Safety Stock</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="reorder-point3" value="0">
+				  		<input type="number" min="0" class="form-control reagent-data" id="safety-weeks3" disabled value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Sample Volume Dependent</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
 							<select id="dependent3">
@@ -349,88 +363,187 @@
 							</select>
 							<i class="far fa-edit left"></i>
 				  	</div>
-				  	<div class="col-sm-3"><span class="badge badge-dark">Buffer</span></div>
+				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Point</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="buffer3" value="1.1">
+							<input type="number" min="0" class="form-control reagent-data" id="reorder-point3" value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
-				  	<div class="col-sm-3"><span class="badge badge-dark">Weekly Average Use</span></div>
+				  <div class="row">
+				  	<div class="col-sm-3"><span class="badge badge-dark">Weekly Sample Volume</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="avg-use3" value="0">
+							<input type="number" min="0" class="form-control reagent-data" id="weekly-volume3" disabled value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Lead Time (days)</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="lead-time3" value="3">
+							<input type="number" min="0" class="form-control reagent-data" id="lead-time3" disabled value="3">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Runs per Week</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="weekly-runs3" value="0">
+							<input type="number" min="0" class="form-control reagent-data" id="weekly-runs3" disabled value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Reorder Quantity</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="reorder-quant3" value="0">
+							<input type="number" min="0" onkeydown="preventE()" class="form-control reagent-data" id="reorder-quant3" value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
 
-				  <div class="row" id="data">
+				  <div class="row">
 				  	<div class="col-sm-3"><span class="badge badge-dark">Controls per Run</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-							<input type="number" class="form-control reagent-data" id="run-controls3" value="0">
+							<input type="number" min="0" class="form-control reagent-data" id="run-controls3" disabled value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  	<div class="col-sm-3"><span class="badge badge-dark">Weeks to Reorder</span></div>
 				  	<div class="col-sm-3 text-right dashed-border">
-				  		<input type="number" class="form-control reagent-data" id="reorder-weeks3" value="0">
+				  		<input type="number" min="0" class="form-control reagent-data" id="reorder-weeks3" disabled value="0">
 							<i class="far fa-edit left"></i>
 				  	</div>
 				  </div>
+
+				  <div class="row">
+				  	<div class="col-sm-3"><span class="badge badge-dark">Sample Reactions per Order</span></div>
+				  	<div class="col-sm-3 text-right dashed-border">
+							<input type="number" min="0" class="form-control reagent-data" id="reactions-per-item3" disabled value="0">
+							<i class="far fa-edit left"></i>
+				  	</div>
+				  	<div class="col-sm-3"></div>
+				  	<div class="col-sm-3"></div>
+				  </div>
+
 				</div>
 			</div>	
 		</div>
 	</div>
 
-	<script>	
-		// ordering formulas here
-		// basicStock = days * dailyUse
-		// days = 28 = 4 weeks
-		// safetyStock = maxDailyUse * maxLeadTime - avgDailyUse * avgLeadTime
-		// Or safetyStock = basicStock * fudgeFactor
-		// fudgeFactor default = 0; expressed at % to end user
-		// leadTime = timeFromOrderToArrival; days
-		// leadTimeDemand = leadTime * dailyUse
-		// reorderPoint = leadTimeDemand + safetyStock + basicStock
-		// if currentStock <= reorderPoint, use orderQuantity
-		// orderQuantity = 4 * samplesPerWeek / reactionsPerItem
+	<script>
 
-		// $(".result1").html(123)
-		// class tags
-		// itemX
-		// current-stockX
-		// dataX
+		$("button").click(x=>{
+			let target = x.target
+			let targetId = target.id
+			let num = targetId.charAt(targetId.length - 1)
+			let id = targetId.substring(0, targetId.length - 1)
+			let overridable = [`#safety-stock${num}`, `#reorder-point${num}`, `#reorder-quant${num}`]
 
-		//loop data entry calculations
+
+			overridable.map(x=>{
+				$(x).removeAttr("override")
+			})
+
+			calculateInventory(num, id, target)
+		})
+
+		$(":input[type='number']").keydown(event => {
+			var invalidChars = ["-","+","e"]
+
+			if(invalidChars.includes(event.key)) {
+				event.preventDefault()
+			}
+		})
+
+		function calculateInventory(num, id, target){
+			let baseStock, leadTimeUsage, safetyStock,
+				currentStock,
+				// unitOrder = parseInt($(`#unit-order${num}`)[0].textContent),
+				weeklyVolume = parseInt($(`#weekly-volume${num}`).val()),
+				runsPerWeek = parseInt($(`#weekly-runs${num}`).val()),
+				controlsPerRun = parseInt($(`#run-controls${num}`).val()),
+				leadTime = parseInt($(`#lead-time${num}`).val()) / 7,
+				safetyStockWeeks = parseInt($(`#safety-weeks${num}`).val()),
+				reorderWeeks = parseInt($(`#reorder-weeks${num}`).val()),
+				reactionsPerOrder = parseInt($(`#reactions-per-item${num}`).val()),
+				volumeDependent = parseInt($(`#dependent${num}`)[0].value),
+				weeklyUse,
+				reorderPoint,
+				reorderQuantity
+
+			if (id == "current-stock"){
+				currentStock = parseInt($(target)[0].value)
+			} else {
+				currentStock = parseInt($(`#current-stock${num}`).val()) || 0
+			}
+
+			currentStock = currentStock == "" ? 0 : parseInt(currentStock)
+			reactionsPerOrder = reactionsPerOrder == 0 ? 1 : reactionsPerOrder
+			$(`#on-hand${num}`).html(currentStock)
+			$(`#current-stock${num}`).val(currentStock)
+
+			if (volumeDependent) {
+				// if volume dependent, remove disabled input and use stored values
+				// if field is overriden, do not calculate
+				// add override tag to overriden fields
+				// double check calculations
+				$(`#weekly-volume${num}`).removeAttr("disabled")
+				$(`#weekly-runs${num}`).removeAttr("disabled")
+				$(`#run-controls${num}`).removeAttr("disabled")
+				$(`#lead-time${num}`).removeAttr("disabled")
+				$(`#safety-weeks${num}`).removeAttr("disabled")
+				$(`#reorder-weeks${num}`).removeAttr("disabled")
+				$(`#reactions-per-item${num}`).removeAttr("disabled")
+				$(`#safety-stock${num}`).removeAttr("disabled")		
+
+				weeklyUse = (weeklyVolume + runsPerWeek * controlsPerRun) / reactionsPerOrder
+				// console.log(`weeklyUse ${weeklyUse}`)
+
+				baseStock = weeklyUse * 4
+				// console.log(`baseStock ${baseStock}`)
+
+				safetyStock = $(`#safety-stock${num}`).attr("override") == "true" ? parseInt($(`#safety-stock${num}`).val()) : weeklyUse * safetyStockWeeks
+				// console.log(`safetyStock ${safetyStock}`)
+
+				leadTimeUsage = weeklyUse * leadTime
+				// console.log(`leadTimeUsage ${leadTimeUsage}`)
+
+				reorderPoint = $(`#reorder-point${num}`).attr("override") == "true" ? parseInt($(`#reorder-point${num}`).val()) : leadTimeUsage + safetyStock + baseStock
+				// console.log(`reorderPoint ${reorderPoint}`)
+
+				reorderQuantity = $(`#reorder-quant${num}`).attr("override") == "true" ? parseInt($(`#reorder-quant${num}`).val()) : weeklyUse * reorderWeeks
+				// console.log(`reorderQuantity ${reorderQuantity}`)
+
+				$(`#safety-stock${num}`).val(Math.ceil(safetyStock))
+				$(`#reorder-point${num}`).val(Math.ceil(reorderPoint * 100)/100)
+				$(`#reorder-quant${num}`).val(Math.ceil(reorderQuantity))
+			} else {
+				// if not volume dependent, use order quantity once reorder point is crossed
+				$(`#weekly-volume${num}`).attr("disabled", true)
+				$(`#weekly-runs${num}`).attr("disabled", true)
+				$(`#run-controls${num}`).attr("disabled", true)
+				$(`#lead-time${num}`).attr("disabled", true)
+				$(`#safety-weeks${num}`).attr("disabled", true)
+				$(`#reorder-weeks${num}`).attr("disabled", true)
+				$(`#reactions-per-item${num}`).attr("disabled", true)
+				$(`#safety-stock${num}`).attr("disabled", true)
+			}
+
+			if(currentStock <= reorderPoint){
+				$(`#result${num}`).html(Math.ceil(reorderQuantity))
+			} else {
+				$(`#result${num}`).html(0)
+			}
+		}
 
 		$(".inventory-table, .data").change(x=>{
+			// source of change
+			let target = x.target
+			let targetId = target.id
+			let num = targetId.charAt(targetId.length - 1)
+			let id = targetId.substring(0, targetId.length - 1)
+			let overridable = ["safety-stock", "reorder-point", "reorder-quant"]
 
-			let stock = document.getElementsByClassName("current-stock1")[0].value
-			let order = stock * 10
+			if (overridable.includes(id)) {
+				$(target).attr("override", true)
+			}
 
-			// add code to trim letters from stock
-			order = isNaN(order) ? "Please enter a number" : order
+			calculateInventory(num, id, target)			
 
-			console.log(order)
-
-			$(".result1").html(order)
 		})
 
 	</script>
@@ -444,7 +557,7 @@
 			border-bottom: 1px dashed gray;
 		}
 
-		#data {
+		.row {
 			padding: 10px;
 		}
 
@@ -465,6 +578,10 @@
 
 		.left {
 			float: left;
+		}
+
+		.right {
+			float: right;
 		}
 
 		select {
