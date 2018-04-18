@@ -466,12 +466,12 @@
 				reorderQuantity
 
 			if (id == "current-stock"){
-				currentStock = parseInt($(target)[0].value)
+				currentStock = parseFloat($(target)[0].value)
 			} else {
-				currentStock = parseInt($(`#current-stock${num}`).val()) || 0
+				currentStock = parseFloat($(`#current-stock${num}`).val()) || 0
 			}
 
-			currentStock = currentStock == "" ? 0 : parseInt(currentStock)
+			currentStock = currentStock == "" ? 0 : parseFloat(currentStock)
 			reactionsPerOrder = reactionsPerOrder == 0 ? 1 : reactionsPerOrder
 			$(`#on-hand${num}`).html(currentStock)
 			$(`#current-stock${num}`).val(currentStock)
@@ -496,16 +496,16 @@
 				baseStock = weeklyUse * 4
 				// console.log(`baseStock ${baseStock}`)
 
-				safetyStock = $(`#safety-stock${num}`).attr("override") == "true" ? parseInt($(`#safety-stock${num}`).val()) : weeklyUse * safetyStockWeeks
+				safetyStock = $(`#safety-stock${num}`).attr("override") == "true" ? parseFloat($(`#safety-stock${num}`).val()) : weeklyUse * safetyStockWeeks
 				// console.log(`safetyStock ${safetyStock}`)
 
 				leadTimeUsage = weeklyUse * leadTime
 				// console.log(`leadTimeUsage ${leadTimeUsage}`)
 
-				reorderPoint = $(`#reorder-point${num}`).attr("override") == "true" ? parseInt($(`#reorder-point${num}`).val()) : leadTimeUsage + safetyStock + baseStock
+				reorderPoint = $(`#reorder-point${num}`).attr("override") == "true" ? parseFloat($(`#reorder-point${num}`).val()) : leadTimeUsage + safetyStock + baseStock
 				// console.log(`reorderPoint ${reorderPoint}`)
 
-				reorderQuantity = $(`#reorder-quant${num}`).attr("override") == "true" ? parseInt($(`#reorder-quant${num}`).val()) : weeklyUse * reorderWeeks
+				reorderQuantity = $(`#reorder-quant${num}`).attr("override") == "true" ? parseFloat($(`#reorder-quant${num}`).val()) : weeklyUse * reorderWeeks
 				// console.log(`reorderQuantity ${reorderQuantity}`)
 
 				$(`#safety-stock${num}`).val(Math.ceil(safetyStock))
