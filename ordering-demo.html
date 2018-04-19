@@ -402,6 +402,11 @@
 		}
 
 		$(".inventory-table, .data").change(x=>{
+
+			$("input").focus(function() {
+				$(this).select()
+			})
+
 			// source of change
 			let target = x.target
 			let targetId = target.id
@@ -414,6 +419,11 @@
 			$(`#last-update${num}`).html(now.format("MMM DD, YYYY, HH:mm:ss"))
 			$(`#last-update${num}`).attr("time", now)
 
+			$("input").keypress(function(e) {
+				if(e.keyCode == 13) {
+					$(this).select()
+				}
+			})
 		})
 
 	</script>
